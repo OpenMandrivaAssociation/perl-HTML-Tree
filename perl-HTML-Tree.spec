@@ -1,6 +1,6 @@
 %define module	HTML-Tree
 %define name	perl-%{module}
-%define version	3.1901
+%define version	3.23
 %define release %mkrel 1
 
 Name:		%{name}
