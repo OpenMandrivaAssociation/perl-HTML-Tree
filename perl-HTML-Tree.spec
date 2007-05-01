@@ -1,6 +1,7 @@
 %define module	HTML-Tree
 %define name	perl-%{module}
-%define version	3.23
+%define real_version	3.23
+%define version	3.2300
 %define release %mkrel 1
 
 Name:		%{name}
@@ -9,7 +10,7 @@ Release:	%{release}
 Summary:	Build and scan parse-trees of HTML
 Group:		Development/Perl
 License:	GPL or Artistic
-Source:		http://www.cpan.org/authors/id/S/SB/SBURKE/%{module}-%{version}.tar.bz2
+Source:		http://www.cpan.org/authors/id/S/SB/SBURKE/%{module}-%{real_version}.tar.bz2
 Url:		http://search.cpan.org/dist/%{module}/
 %if %{mdkversion} < 1010
 BuildRequires:	perl-devel
@@ -26,7 +27,7 @@ libwww-perl distribution, but are now unbundled in order to facilitate
 a separate development track.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{module}-%{real_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
