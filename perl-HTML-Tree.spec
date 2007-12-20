@@ -17,6 +17,7 @@ BuildRequires:	perl-devel
 %endif
 BuildRequires:	perl-HTML-Parser
 BuildArch:	noarch
+BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 This distribution contains a suite of modules for representing,
