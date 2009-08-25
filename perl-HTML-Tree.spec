@@ -4,6 +4,7 @@
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
 Release:    %mkrel 1
+Epoch:      1
 
 Summary:	Build and scan parse-trees of HTML
 License:	GPL+ or Artistic
