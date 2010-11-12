@@ -1,5 +1,5 @@
 %define upstream_name	 HTML-Tree
-%define upstream_version 3.23
+%define upstream_version 4.1
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
@@ -10,7 +10,7 @@ Summary:	Build and scan parse-trees of HTML
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}/
-Source0:	http://www.cpan.org/authors/id/S/SB/SBURKE/%{upstream_name}-%{upstream_version}.tar.bz2
+Source0:	http://www.cpan.org/authors/id/S/SB/SBURKE/%{upstream_name}-%{upstream_version}.tar.gz
 
 %if %{mdkversion} < 1010
 BuildRequires:	perl-devel
@@ -34,7 +34,7 @@ a separate development track.
 %make
 
 %check
-%{__make} test
+%make test
 
 %install
 rm -rf %{buildroot}
@@ -47,4 +47,5 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %doc README Changes
 %{perl_vendorlib}/HTML
+%{_bindir}/*
 %{_mandir}/*/*
