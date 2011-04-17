@@ -1,5 +1,5 @@
 %define upstream_name	 HTML-Tree
-%define upstream_version 4.1
+%define upstream_version 4.2
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
