@@ -3,7 +3,7 @@
 Summary:	Build and scan parse-trees of HTML
 Name:		perl-%{modname}
 Version:	5.07
-Release:	1
+Release:	2
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}/
