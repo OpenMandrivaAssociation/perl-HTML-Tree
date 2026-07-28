@@ -3,18 +3,17 @@
 Summary:	Build and scan parse-trees of HTML
 Name:		perl-%{modname}
 Version:	5.07
-Release:	3
+Release:	5
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{modname}/
-Source0:	http://www.cpan.org/authors/id/K/KE/KENTNL/%{modname}-%{version}.tar.gz
+Url:		https://metacpan.org/dist/HTML-Tree
+Source0:	https://cpan.metacpan.org/authors/id/K/KE/KENTNL/%{modname}-%{version}.tar.gz
 BuildArch:	noarch
 BuildRequires:	perl(Test::More)
 BuildRequires:	perl-devel
 BuildRequires:	perl(HTML::Parser)
 BuildRequires:	perl(HTML::FormatText)
 BuildRequires:	perl(Module::Build)
-# Hacky, but effective, way to drop the Epoch
 Obsoletes:	perl-HTML-Tree = 1:4.200.0-17
 
 %description
@@ -26,16 +25,16 @@ a separate development track.
 
 %prep
 %autosetup -p1 -n %{modname}-%{version}
-perl Build.PL INSTALLDIRS=vendor destdir=%{buildroot} prefix=%{_prefix} installdirs=vendor
 
 %build
+perl Build.PL --installdirs=vendor
 ./Build
 
 %check
 ./Build test || :
 
 %install
-./Build install
+./Build install --destdir=%{buildroot} --create_packlist=0
 
 %files
 %doc README Changes
